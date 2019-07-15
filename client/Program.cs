@@ -9,7 +9,7 @@ namespace client
         static void Main(string[] args)
         {
             var port = 10000;
-            var channel = new Channel($"localhost:{port}", ChannelCredentials.Insecure);
+            var channel = new Channel($"envoy:{port}", ChannelCredentials.Insecure);
             var client = new Greeter.GreeterClient(channel);
             for(var i = 0; i < 105; i++)
             {

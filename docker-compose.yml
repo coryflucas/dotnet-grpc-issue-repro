@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+  envoy:
+    image: envoyproxy/envoy-alpine:v1.11.0
+    volumes:
+      - ./envoy:/etc/envoy
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile-client

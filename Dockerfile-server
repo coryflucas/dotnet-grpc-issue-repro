@@ -1,0 +1,7 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0.100-preview6
+
+COPY ./server/ /server
+WORKDIR /server
+RUN dotnet build
+
+CMD ["dotnet", "run"]
